@@ -24,8 +24,7 @@ namespace ATS.WCF.Data.Models
         public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Privilege> Privileges { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<Test> Tests { get; set; }
+       
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -38,8 +37,7 @@ namespace ATS.WCF.Data.Models
             modelBuilder.Configurations.Add(new MenuMap());
             modelBuilder.Configurations.Add(new MenuItemMap());
             modelBuilder.Configurations.Add(new PrivilegeMap());
-            modelBuilder.Configurations.Add(new sysdiagramMap());
-            modelBuilder.Configurations.Add(new TestMap());
+
             modelBuilder.Configurations.Add(new UserMap());
         }
     }
