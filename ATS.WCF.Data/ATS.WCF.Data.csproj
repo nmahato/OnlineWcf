@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IGenericRepository.cs" />
+    <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Models\LKProjectConfig.cs" />
     <Compile Include="Models\LKRole.cs" />
     <Compile Include="Models\LKState.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Models\Privilege.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

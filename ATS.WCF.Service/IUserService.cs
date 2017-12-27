@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATS.WCF.Service.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,7 +13,9 @@ namespace ATS.WCF.Service
     public interface IUserService
     {
         [OperationContract]
-        string GetUserName(string Name);
+        List<UserDto> GetUserName(string Name);
+          [OperationContract]
+        string GetUserNameTest(string Name);
         
     }
 }

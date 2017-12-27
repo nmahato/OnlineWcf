@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:9090/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:9090/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9090/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ATS.WCF.Service.Dto" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUserService_GetUserName_InputMessage">
@@ -12,16 +13,35 @@
   <wsdl:message name="IUserService_GetUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_GetUserNameTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameTest" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserNameTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameTestResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="GetUserName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserName" message="tns:IUserService_GetUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserNameResponse" message="tns:IUserService_GetUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserNameTest" message="tns:IUserService_GetUserNameTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserNameTestResponse" message="tns:IUserService_GetUserNameTest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetUserName">
       <soap:operation soapAction="http://tempuri.org/IUserService/GetUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameTest">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserNameTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

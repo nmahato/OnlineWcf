@@ -10,8 +10,8 @@ namespace ATS.WCF.UI.Controllers
     {
         public ActionResult Index()
         {
-            var service = new ATSService.UserServiceClient();
-            var name = service.GetUserName("Nitai");
+            var service = new ATSService.UserServiceClient("BasicHttpBinding_IUserService");
+            var user = service.GetUserName("Nitai");
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             return View();

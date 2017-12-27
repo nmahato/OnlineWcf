@@ -10,7 +10,7 @@ namespace ATS.WCF.Data.Models
             this.Privileges = new List<Privilege>();
         }
 
-        public System.Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }
@@ -21,7 +21,7 @@ namespace ATS.WCF.Data.Models
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public System.Guid Status { get; set; }
+        public int Status { get; set; }
         public virtual LKStatu LKStatu { get; set; }
         public virtual ICollection<Privilege> Privileges { get; set; }
     }

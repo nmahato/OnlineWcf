@@ -10,7 +10,7 @@ namespace ATS.WCF.Service.Dto
             this.Privileges = new List<PrivilegeDto>();
         }
 
-        public System.Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }
@@ -20,7 +20,7 @@ namespace ATS.WCF.Service.Dto
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
-        public System.Guid Status { get; set; }
+        public int Status { get; set; }
         public virtual StatusDto LKStatu { get; set; }
         public virtual ICollection<PrivilegeDto> Privileges { get; set; }
     }

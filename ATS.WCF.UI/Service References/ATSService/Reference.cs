@@ -9,17 +9,166 @@
 //------------------------------------------------------------------------------
 
 namespace ATS.WCF.UI.ATSService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserDto", Namespace="http://schemas.datacontract.org/2004/07/ATS.WCF.Service.Dto")]
+    [System.SerializableAttribute()]
+    public partial class UserDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Address1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MiddleNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address1 {
+            get {
+                return this.Address1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Address1Field, value) != true)) {
+                    this.Address1Field = value;
+                    this.RaisePropertyChanged("Address1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MiddleName {
+            get {
+                return this.MiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MiddleNameField, value) != true)) {
+                    this.MiddleNameField = value;
+                    this.RaisePropertyChanged("MiddleName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserIdField, value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ATSService.IUserService")]
     public interface IUserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserName", ReplyAction="http://tempuri.org/IUserService/GetUserNameResponse")]
-        string GetUserName(string Name);
+        ATS.WCF.UI.ATSService.UserDto[] GetUserName(string Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserName", ReplyAction="http://tempuri.org/IUserService/GetUserNameResponse")]
-        System.Threading.Tasks.Task<string> GetUserNameAsync(string Name);
+        System.Threading.Tasks.Task<ATS.WCF.UI.ATSService.UserDto[]> GetUserNameAsync(string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserNameTest", ReplyAction="http://tempuri.org/IUserService/GetUserNameTestResponse")]
+        string GetUserNameTest(string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUserNameTest", ReplyAction="http://tempuri.org/IUserService/GetUserNameTestResponse")]
+        System.Threading.Tasks.Task<string> GetUserNameTestAsync(string Name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +198,20 @@ namespace ATS.WCF.UI.ATSService {
                 base(binding, remoteAddress) {
         }
         
-        public string GetUserName(string Name) {
+        public ATS.WCF.UI.ATSService.UserDto[] GetUserName(string Name) {
             return base.Channel.GetUserName(Name);
         }
         
-        public System.Threading.Tasks.Task<string> GetUserNameAsync(string Name) {
+        public System.Threading.Tasks.Task<ATS.WCF.UI.ATSService.UserDto[]> GetUserNameAsync(string Name) {
             return base.Channel.GetUserNameAsync(Name);
+        }
+        
+        public string GetUserNameTest(string Name) {
+            return base.Channel.GetUserNameTest(Name);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetUserNameTestAsync(string Name) {
+            return base.Channel.GetUserNameTestAsync(Name);
         }
     }
 }
